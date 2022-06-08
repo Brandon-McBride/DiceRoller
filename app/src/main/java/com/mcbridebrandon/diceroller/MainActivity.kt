@@ -25,11 +25,15 @@ class MainActivity : AppCompatActivity() {
      */
     private fun rollDice() {
         // Create new Dice object with 6 sides and roll it
-        val dice = Dice(6);
-        val diceRoll = dice.roll();
+        val firstDie = Dice(6);
+        val secondDie = Dice(6);
+        val diceRollOne = firstDie.roll();
+        val diceRollTwo = secondDie.roll();
         // Update the screen with the dice roll
-        val rollText: TextView = findViewById(R.id.textView);
-        rollText.text = diceRoll.toString();
+        val rollTextOne: TextView = findViewById(R.id.dieOne);
+        val rollTextTwo: TextView = findViewById(R.id.dieTwo);
+        rollTextOne.text = diceRollOne.toString();
+        rollTextTwo.text = diceRollTwo.toString();
         //give a toast
         val toast = Toast.makeText(this, "Dice Rolled", Toast.LENGTH_SHORT);
         toast.show();
